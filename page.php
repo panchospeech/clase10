@@ -14,11 +14,11 @@ $csv = array_map('str_getcsv', file('https://raw.githubusercontent.com/panchospe
 
 <?php for($t = 0; $t < count($csv); $t++){?>
     <div class="col-sm-4 col-md-3 py-3">
-    <h4 class="border-top pt-2"><?php print($csv[$t]['videojuego'])?></h4>
-    <h6 class="border-top pt-1"> <?php print($csv[$t]['videojuego'])?>
+    <h4 class="border-top pt-1"><?php print($csv[$t]['videojuego'])?></h4>
+    <h6 class="border-top pt-1">Año: <?php print($csv[$t]['año'])?>
     </h6>
     
-    <figure style="height:120px; overflow:hidden;">
+    <figure style="height:200px; overflow:hidden;">
     
     <img src="
     <?php if ($csv[$t]['img'] == NULL){
@@ -30,12 +30,12 @@ $csv = array_map('str_getcsv', file('https://raw.githubusercontent.com/panchospe
     class="img-fluid">
     </figure>
 
-<h6 class="text-small pt-1"> <?php print($csv[$t]['año'])?></h6>
+<h6 class="text-small pt-1"> <?php print($csv[$t]['consola'])?></h6>
 
     <?php if ($csv[$t]['videojuego'] == NULL){
         print '<h6><a href="'.($csv[$t]['url']).'">'.($csv[$t]['consola']).'</a></h6>';
     } else {
-        print '<h6><a href="'.($csv[$t]['url']).'">'.($csv[$t]['año']).'</a></h6>';
+        print '<h6><a href="'.($csv[$t]['url']).'">'."ver más".'</a></h6>';
     }?>
    
     </div>
